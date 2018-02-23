@@ -1,7 +1,5 @@
 # logger
 
-===
-
 [![CircleCI](https://img.shields.io/circleci/project/github/felixpy/logger.svg)](https://circleci.com/gh/felixpy/logger)
 [![Codecov](https://img.shields.io/codecov/c/github/felixpy/logger.svg)](https://codecov.io/gh/felixpy/logger)
 [![Version](https://img.shields.io/npm/v/@felixpy/logger.svg)](https://www.npmjs.com/package/@felixpy/logger)
