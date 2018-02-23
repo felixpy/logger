@@ -3,7 +3,7 @@ import BuiltInAppenders from '../appenders'
 
 export function generateConfig (config) {
   let presets = {
-    level: 'ALL',
+    level: 'LOG',
     prefix: '[%t] [%p] [%c->%m]',
     separator: '-',
     dateFormatter (d) {

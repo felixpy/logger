@@ -23,6 +23,10 @@ class Logger {
   }
 
   constructor (options = {}) {
+    options = TYPOR.str(options) ? {
+      name: options
+    } : options
+
     this.lid = lid++
     this.name = options.name || `logger#${this.lid}`
     this.init(options)

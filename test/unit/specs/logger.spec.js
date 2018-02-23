@@ -68,6 +68,14 @@ describe('Use Default Instance Name', function () {
   })
 })
 
+describe('Use String Options', function () {
+  const logger = new Logger('STR')
+
+  it('should name be the giving string options', function () {
+    expect(logger.name).to.equal('STR')
+  })
+})
+
 describe('Different Config of Appenders', function () {
   const logger = new Logger({
     name: 'UnitTest',
