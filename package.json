@@ -10,7 +10,7 @@
     "test": "npm run test:unit",
     "test:unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "report": "npm run report",
-    "report:codecov": "codecov",
+    "report:codecov": "codecov test/unit/coverage/lcov.info",
     "build": "node scripts/build.js"
   },
   "repository": {
