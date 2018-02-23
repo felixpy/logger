@@ -57,3 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# vscode workspace
+.vscode
+
+# MAC OS 
+.DS_Store
