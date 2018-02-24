@@ -13,7 +13,9 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'logger.js',
-    path: resolve('dist')
+    path: resolve('dist'),
+    library: 'Logger',
+    libraryTarget: 'umd'
   },
   resolve: {
     extensions: ['.js', '.json'],
