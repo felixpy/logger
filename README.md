@@ -28,7 +28,10 @@ npm i @felixpy/logger --save
 const logger = new Logger({
   name: 'LoggerName',
   config: {
-    separator: '>>>'
+    separator: '>>>',
+    dateFormatter: function(date) {
+      return date.toISOString()
+    }
   }
 })
 
@@ -100,7 +103,7 @@ Normally, you shold specify an object appender option like this:
 }
 ```
 
-Also you can simply specify a string as built-in appender name of a function as appender callback.
+Also you can simply specify a string as built-in appender name or a function as appender callback.
 
 When you want use multiple appenders, you just need put them in an array.
 
@@ -108,45 +111,75 @@ When you want use multiple appenders, you just need put them in an array.
 
 Each instance of logger will have these methods:
 
-`.debug(methodName, message, [...args])`
+`.debug(methodName, message, [...more])`
 
-Log with `DEBUG` priority.
+Log with `DEBUG` priority, example:
 
-`.log(methodName, message, [...args])`
+```js
+logger.debug('Save', 'Parameters: ', '{"name":"Felix"}')
+```
+
+`.log(methodName, message, [...more])`
 
 Log with `LOG` priority.
 
-`.info(methodName, message, [...args])`
+`.info(methodName, message, [...more])`
 
 Log with `INFO` priority.
 
-`.warn(methodName, message, [...args])`
+`.warn(methodName, message, [...more])`
 
 Log with `WARN` priority.
 
-`.error(methodName, message, [...args])`
+`.error(methodName, message, [...more])`
 
 Log with `ERROR` priority.
 
 `.setLevel(level)`
 
-Set minimum level to show logs.
+Set minimum level to show logs, example:
+
+```js
+logger.setLevel('INFO')
+```
 
 `.setPrefix(prefix)`
 
-Set prefix pattern of logger.
+Set prefix pattern of logger, example:
+
+```js
+logger.setPrefix('INFO')
+```
 
 `.setSeparator(separator)`
 
-Set separator of logger.
+Set separator of logger, example:
+
+```js
+logger.setSeparator('>>>')
+```
 
 `.setDateFormatter(dateFormatter)`
 
-Set date formatter of logger.
+Set date formatter of logger, example:
+
+```js
+logger.setDateFormatter(function(date) {
+  return date.toGMTString()
+})
+```
 
 `.setAppender(appenders)`
 
-Set appenders of logger.
+Set appenders of logger, example:
+
+```js
+const myAppender = {
+  handler: function (level, args) { /* ... */}
+}
+
+logger.setAppender(['console', myAppender])
+```
 
 ## Global API
 
