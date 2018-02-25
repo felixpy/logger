@@ -50,7 +50,7 @@ Optional logger name, by default it will be `Logger#{id}`.
 
 Type: `Object`
 
-Custom configuration of logger, these are the available keys, none is required:
+Custom configuration of logger, these are available keys, none is required:
 
 ```js
 {
@@ -106,43 +106,45 @@ When you want use multiple appenders, you just need put them in an array.
 
 ## Instance Methods
 
-`logger.debug(methodName, message, [...args])`
+Each instance of logger will have these methods:
+
+`.debug(methodName, message, [...args])`
 
 Log with `DEBUG` priority.
 
-`logger.log(methodName, message, [...args])`
+`.log(methodName, message, [...args])`
 
 Log with `LOG` priority.
 
-`logger.info(methodName, message, [...args])`
+`.info(methodName, message, [...args])`
 
 Log with `INFO` priority.
 
-`logger.warn(methodName, message, [...args])`
+`.warn(methodName, message, [...args])`
 
 Log with `WARN` priority.
 
-`logger.error(methodName, message, [...args])`
+`.error(methodName, message, [...args])`
 
 Log with `ERROR` priority.
 
-`logger.setLevel(level)`
+`.setLevel(level)`
 
 Set minimum level to show logs.
 
-`logger.setPrefix(prefix)`
+`.setPrefix(prefix)`
 
 Set prefix pattern of logger.
 
-`logger.setSeparator(separator)`
+`.setSeparator(separator)`
 
 Set separator of logger.
 
-`logger.setDateFormatter(dateFormatter)`
+`.setDateFormatter(dateFormatter)`
 
 Set date formatter of logger.
 
-`logger.setAppender(appenders)`
+`.setAppender(appenders)`
 
 Set appenders of logger.
 
