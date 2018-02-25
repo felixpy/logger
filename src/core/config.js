@@ -9,7 +9,7 @@ export function generateConfig (config) {
     dateFormatter (d) {
       return d.toLocaleString()
     },
-    appenders: ['console', 'localStorage']
+    appenders: ['console']
   }
 
   Object.keys(config).forEach((key) => {

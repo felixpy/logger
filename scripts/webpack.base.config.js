@@ -14,7 +14,6 @@ module.exports = {
   output: {
     filename: 'logger.js',
     path: resolve('dist'),
-    library: 'Logger',
     libraryTarget: 'umd'
   },
   resolve: {
