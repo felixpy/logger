@@ -148,7 +148,7 @@ logger.setLevel('INFO')
 Set prefix pattern of logger, example:
 
 ```js
-logger.setPrefix('INFO')
+logger.setPrefix('[Date->%t] [Priority->%p] [%c->%m]')
 ```
 
 `.setSeparator(separator)`
