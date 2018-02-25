@@ -28,7 +28,7 @@ class Logger {
     } : options
 
     this.lid = lid++
-    this.name = options.name || `logger#${this.lid}`
+    this.name = options.name || `Logger#${this.lid}`
     this.init(options)
   }
 
