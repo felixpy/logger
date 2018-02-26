@@ -111,11 +111,11 @@ When you want use multiple appenders, you just need put them in an array.
 
 Each instance of logger will have these methods:
 
-### logger.debug(methodName, arg1, [arg2, ..., argN])
+### logger.debug(methodName, [...args])
 
 Log with `DEBUG` priority. See `logger.log`.
 
-### logger.log(methodName, arg1, [arg2, ..., argN])
+### logger.log(methodName, [...args])
 
 Log with `LOG` priority, example:
 
@@ -131,15 +131,15 @@ logger.log('Some magic messages')
 // [2018/2/26 下午11:08:44] [LOG] [ExampleLogger->?] - Some magic messages
 ```
 
-### logger.info(methodName, arg1, [arg2, ..., argN])
+### logger.info(methodName, [...args])
 
 Log with `INFO` priority. See `logger.log`.
 
-### logger.warn(methodName, arg1, [arg2, ..., argN])
+### logger.warn(methodName, [...args])
 
 Log with `WARN` priority. See `logger.log`.
 
-### logger.error(methodName, arg1, [arg2, ..., argN])
+### logger.error(methodName, [...args])
 
 Log with `ERROR` priority. See `logger.log`.
 
