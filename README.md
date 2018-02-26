@@ -120,11 +120,11 @@ Log with `DEBUG` priority. See `logger.log`.
 Log with `LOG` priority, example:
 
 ```js
-logger.log('Save', 'Parameters: ', '{"name":"Felix"}')
+logger.log('Save', 'Parameters: ', '{"name":"foobar"}')
 // [2018/2/26 下午11:09:54] [LOG] [ExampleLogger->Save] - Parameters:  {"name":"foobar"}
 ```
 
-Note: When only passing one argument, the method name will be ignored. Example:
+**Note:** When only passing one argument, the method name will be ignored. Example:
 
 ```js
 logger.log('Some magic messages')
