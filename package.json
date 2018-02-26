@@ -1,6 +1,6 @@
 {
   "name": "@felixpy/logger",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A simple javascript logger for web developers.",
   "main": "dist/logger.js",
   "directories": {
