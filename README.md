@@ -58,7 +58,7 @@ Custom configuration of logger, these are available keys, none is required:
 ```js
 {
   // The minimum log level to show,
-  // Possible values: ALL, DEBUG, LOG, INFO, WARN, ERROR, OFF.
+  // Available values: ALL, DEBUG, LOG, INFO, WARN, ERROR, OFF.
   level: 'LOG',
 
   // Prefix pattern:
@@ -111,31 +111,39 @@ When you want use multiple appenders, you just need put them in an array.
 
 Each instance of logger will have these methods:
 
-`.debug(methodName, message, [...more])`
+### logger.debug(methodName, arg1, [arg2, ..., argN])
 
-Log with `DEBUG` priority, example:
+Log with `DEBUG` priority. See `logger.log`.
+
+### logger.log(methodName, arg1, [arg2, ..., argN])
+
+Log with `LOG` priority, example:
 
 ```js
-logger.debug('Save', 'Parameters: ', '{"name":"Felix"}')
+logger.log('Save', 'Parameters: ', '{"name":"Felix"}')
+// [2018/2/26 下午11:09:54] [LOG] [ExampleLogger->Save] - Parameters:  {"name":"foobar"}
 ```
 
-`.log(methodName, message, [...more])`
+Note: When only passing one argument, the method name will be ignored. Example:
 
-Log with `LOG` priority.
+```js
+logger.log('Some magic messages')
+// [2018/2/26 下午11:08:44] [LOG] [ExampleLogger->?] - Some magic messages
+```
 
-`.info(methodName, message, [...more])`
+### logger.info(methodName, arg1, [arg2, ..., argN])
 
-Log with `INFO` priority.
+Log with `INFO` priority. See `logger.log`.
 
-`.warn(methodName, message, [...more])`
+### logger.warn(methodName, arg1, [arg2, ..., argN])
 
-Log with `WARN` priority.
+Log with `WARN` priority. See `logger.log`.
 
-`.error(methodName, message, [...more])`
+### logger.error(methodName, arg1, [arg2, ..., argN])
 
-Log with `ERROR` priority.
+Log with `ERROR` priority. See `logger.log`.
 
-`.setLevel(level)`
+### logger.setLevel(level)
 
 Set minimum level to show logs, example:
 
@@ -143,7 +151,7 @@ Set minimum level to show logs, example:
 logger.setLevel('INFO')
 ```
 
-`.setPrefix(prefix)`
+### logger.setPrefix(prefix)
 
 Set prefix pattern of logger, example:
 
@@ -151,7 +159,7 @@ Set prefix pattern of logger, example:
 logger.setPrefix('[Date->%t] [Priority->%p] [%c->%m]')
 ```
 
-`.setSeparator(separator)`
+### logger.setSeparator(separator)
 
 Set separator of logger, example:
 
@@ -159,7 +167,7 @@ Set separator of logger, example:
 logger.setSeparator('>>>')
 ```
 
-`.setDateFormatter(dateFormatter)`
+### logger.setDateFormatter(dateFormatter)
 
 Set date formatter of logger, example:
 
@@ -169,13 +177,13 @@ logger.setDateFormatter(function(date) {
 })
 ```
 
-`.setAppender(appenders)`
+### logger.setAppender(appenders)
 
 Set appenders of logger, example:
 
 ```js
 const myAppender = {
-  handler: function (level, args) { /* ... */}
+  handler: function (level, args) { /* ... */ }
 }
 
 logger.setAppender(['console', myAppender])
