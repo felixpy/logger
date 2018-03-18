@@ -29,7 +29,7 @@ const logger = new Logger({
   name: 'LoggerName',
   config: {
     separator: '>>>',
-    dateFormatter: function(date) {
+    dateFormatter: function (date) {
       return date.toISOString()
     }
   }
