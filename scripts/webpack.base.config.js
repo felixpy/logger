@@ -2,6 +2,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const year = new Date().getFullYear()
 const version = process.env.VERSION || require('../package.json').version
 
 function resolve (dir) {
@@ -19,7 +20,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
-      '@': resolve('src'),
+      '@': resolve('src')
     }
   },
   devtool: '#source-map',
@@ -43,7 +44,12 @@ module.exports = {
       parallel: true
     }),
     new webpack.BannerPlugin({
-      banner: '/**\n * logger.js v' + version + '\n * (c) 2018 Felix Yang \n */',
+      banner:
+        '/**\n * logger.js v' +
+        version +
+        '\n * (c) ' +
+        year +
+        ' Felix Yang \n */',
       raw: true,
       entryOnly: true
     })
