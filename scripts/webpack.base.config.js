@@ -45,7 +45,7 @@ module.exports = {
     }),
     new webpack.BannerPlugin({
       banner:
-        '/**\n * logger.js v' +
+        '/**\n * @felixpy/logger v' +
         version +
         '\n * (c) ' +
         year +
